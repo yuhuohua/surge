@@ -6,5 +6,5 @@
 #!arguments=CRON定时设置:"0 9 * * *",提前天数:1,生日数据1:老婆@1@10-13 ,生日数据2:"" ,生日数据3:"" ,生日数据4:"" ,生日数据5:"" ,生日数据6:"" ,生日数据7:"" ,生日数据8:"" ,生日数据9:"" ,生日数据10:""
 
 [Script]
-生日提醒 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/srts.js, wake-system=1, timeout=60, argument=info={{{生日数据1}}};{{{生日数据2}}};{{{生日数据3}}};{{{生日数据4}}};{{{生日数据5}}};{{{生日数据6}}};{{{生日数据7}}};{{{生日数据8}}};{{{生日数据9}}};{{{生日数据10}}} &advance={{{提前天数}}}
+生日提醒 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/srts1.js, wake-system=1, timeout=60, argument=info={{{生日数据1}}};{{{生日数据2}}};{{{生日数据3}}};{{{生日数据4}}};{{{生日数据5}}};{{{生日数据6}}};{{{生日数据7}}};{{{生日数据8}}};{{{生日数据9}}};{{{生日数据10}}} &advance={{{提前天数}}}
 
