@@ -1,6 +1,6 @@
 #!name=WeTalk 自动化签到+视频奖励
 #!desc=WeTalk 签到做任务白嫖国外手机号
-#!category=每日提醒
+#!category=〈ザㄩメ火华
 #!arguments= CRON−WeTalk:"0 10-22/6 * * *",token获取:"",通知模式:"0"
 #!arguments-desc=token获取控制开关：默认为空(开启)，在对应项填写 # 即可禁用该脚本。\n\nCRON−WeTalk:脚本运行时间(默认早上10点、下午16点、晚上22点)\n\n通知模式：0为每次运行通知，1为仅22点总汇通知。
 
