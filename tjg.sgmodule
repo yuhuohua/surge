@@ -2,6 +2,8 @@
 #!desc=天玑观商品上新通知
 #!author=〈ザㄩメ火华
 #!category=〈ザㄩメ火华
+#!arguments=CRON定时设置:"*/30 8-18 * * *"
+#!arguments-desc=CRON定时设置:脚本运行时间， CRON 表达式。
 
 [Script]
-天玑馆 = type=cron,cronexp=*/30 8-23 * * *,timeout=60,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/tjg.js
+天玑馆 = type=cron, cronexp="{{{CRON定时设置}}}",timeout=60,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/tjg.js
