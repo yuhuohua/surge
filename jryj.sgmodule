@@ -1,0 +1,12 @@
+#!name=今日油价
+#!desc=查询每日油价信息，支持面板显示和静默通知。
+#!author=〈ザㄩメ火华
+#!category=日常工具
+#!arguments=省份:广东, 静默运行:"", 图标名称:fuelpump.fill, 图标颜色:#FF2D55, Cron定时设置:"30 8 * * *"
+#!arguments-desc=省份: 查询省份 (例如：北京、上海、广东)\n静默运行: 静默运行 (填 # 则不通知，留空则正常通知)\n图标名称: SF Symbol 图标名称\n图标颜色: 图标颜色 (Hex)\nCron定时设置: 定时任务时间 (CRON 表达式)
+
+[Script]
+今日油价 = type=cron, cronexp="{{{Cron定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/jryj.js, argument=province={{{省份}}}&silent={{{静默运行}}}&icon={{{图标名称}}}&color={{{图标颜色}}}, wake-system=0, timeout=60
+
+[Panel]
+今日油价 = script-name=今日油价, update-interval=43200, timeout=60
