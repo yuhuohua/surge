@@ -1,0 +1,14 @@
+#!name=声荐每日自动签到
+#!desc=微信小程序声荐每日签到加领取小红花，首次运行请打开微信声荐小程序，等收到获取token即可。日后提示token失效就再打开微信声荐小程序更新token。脚本签到时间默认10，16，22点运行，可点击编辑参数自行修改。静默运行，1:每次脚本运行都弹窗通知，0:只有22点弹窗总汇通知，其余时间不通知
+#!author=〈ザㄩメ火华
+#!category=每日提醒
+#!arguments=CRON定时设置:"0 10-22/6 * * *", 声荐自动抓取开关:"", 静默运行:"0"
+#!arguments-desc=CRON定时设置: 签到脚本的 CRON 表达式; 声荐自动抓取开关: 填写 # 即可禁用Token捕获; 静默运行: 通知模式 (1=每次通知, 0=仅22点汇总，默认0)
+
+[Script]
+{{{声荐自动抓取开关}}}声荐自动抓取token = type=http-response, pattern=^https:\/\/xcx\.myinyun\.com:4438\/napi\/wx\/login, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/sjtoken.js, requires-body=true, max-size=0, script-update-interval=0, timeout=60
+
+声荐自动任务 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/sj.js, script-update-interval=0, timeout=60, argument=notify={{{静默运行}}}
+
+[MITM]
+hostname = %APPEND% xcx.myinyun.com:4438
