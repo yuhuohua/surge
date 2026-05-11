@@ -1,0 +1,5 @@
+#!name=乐仔生活库存巡检
+#!desc=发现有现金库存弹窗，无库存静默
+
+[Script]
+乐仔生活库存巡检 = type=cron,cronexp=*/30 8-23 * * *,timeout=60,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/lzsh.js,script-update-interval=0
