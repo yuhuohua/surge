@@ -10,5 +10,5 @@
 PingMe = type=cron, cronexp="{{{CRON−PingMe}}}",timeout=60,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/PingMe.js,argument={{{通知模式}}}
 
 [MITM]
-hostname = %APPEND% api.wetalkapp.com
+hostname = %APPEND% api.pingmeapp.net
 
