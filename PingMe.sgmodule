@@ -2,7 +2,7 @@
 #!desc=pingme 签到做任务白嫖国外手机号
 #!category=〈ザㄩメ火华
 #!arguments= CRON−PingMe:"0 7-22/3 * * *",token获取:"",通知模式:"0"
-#!arguments-desc=token获取控制开关：默认为空(开启)，在对应项填写 # 即可禁用该脚本。\n\nCRON−PingMe:脚本运行时间(默认早上10点、下午16点、晚上22点)\n\n通知模式：1为每次运行通知，0为仅22点汇总通知。
+#!arguments-desc=token获取控制开关：默认为空(开启)，在对应项填写 # 即可禁用该脚本。\n\nCRON−PingMe:脚本运行时间(默认早上10点到晚上22点每3小时运行一次)\n\n通知模式：1为每次运行通知，0为仅22点汇总通知。
 
 [Script]
 {{{token获取}}}PingMe_cookie = type=http-response,pattern=^https:\/\/api\.pingmeapp\.net\/app\/queryBalanceAndBonus,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/PingMe_cookie.js,requires-body=1,max-size=0,script-update-interval=0,timeout=60,binary-body-mode=0
