@@ -1,7 +1,7 @@
 #!name=pingme 自动化签到+视频奖励
 #!desc=pingme 签到做任务白嫖国外手机号
 #!category=〈ザㄩメ火华
-#!arguments= CRON−PingMe:"0 7-22/3 * * *",token获取:"",通知模式:"0"
+#!arguments= CRON−PingMe:"* */2 * * *",token获取:"",通知模式:"0"
 #!arguments-desc=token获取控制开关：默认为空(开启)，在对应项填写 # 即可禁用该脚本。\n\nCRON−PingMe:脚本运行时间(默认早上10点到晚上22点每3小时运行一次)\n\n通知模式：1为每次运行通知，0为仅22点汇总通知。
 
 [Script]
