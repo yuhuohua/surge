@@ -6,4 +6,4 @@
 #!arguments=CRON定时设置:"0 9 * * *",静默运行:"",账号和密码:""
 
 [Script]
-ikuuu签到 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=ik.js, wake-system=1, timeout=30, argument={{{账号和密码}}}&silent={{{静默运行}}}
+ikuuu签到 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/ikuuu.js, wake-system=1, timeout=30, argument={{{账号和密码}}}&silent={{{静默运行}}}
