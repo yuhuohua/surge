@@ -1,0 +1,10 @@
+#!name=匠心忠华抓取
+#!desc=匠心忠华抓取X-Token
+#!category=〈ザㄩメ火华
+#!author=〈ザㄩメ火华
+
+[Script]
+获取Token = type=http-request, pattern=^https:\/\/api\.quwayouxuan\.com\/cart\/index\/getCartCount, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/jxzhtk.js
+
+[MITM]
+hostname = %APPEND% api.quwayouxuan.com
