@@ -1,0 +1,10 @@
+#!name=红色火箭捕获
+#!desc=红色火箭openid，ticket，user_id，获取成功后在日志薄日查看。
+#!category=面板数据捕获
+#!author=〈ザㄩメ火华
+
+[Script]
+红色火箭 = type=http-request,pattern=^https:\/\/index.amcfortune.com\/fundex-activity\/operation\/FaPopups?,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/hshj.js
+
+[MITM]
+hostname = %APPEND% index.amcfortune.com
