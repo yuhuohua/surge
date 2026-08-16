@@ -1,5 +1,6 @@
 #!name=芳华未来apptoken捕获
 #!desc=芳华未来apptoken捕获，抓取后日志复制
+#!category=面板数据捕获
 
 [Script]
 获取AppToken = type=http-request, pattern=^https:\/\/api\.cdwjyyh\.com\/app\/integral\/, requires-body=false, max-size=0, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/fhwl.js
