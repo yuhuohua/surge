@@ -1,0 +1,14 @@
+#!name=Theme7签到
+#!desc=Theme7签到
+#!category=〈ザㄩメ火华
+#!author=〈ザㄩメ火华
+#!arguments=CRON定时设置:"0 9 * * *", Token获取开关:留空打开，填#关闭
+#!arguments-desc=CRON定时设置: 签到脚本的 CRON 表达式; Token获取开关: 填写 # 即可禁用Token捕获
+
+[Script]
+{{{Token获取开关}}}Theme7获取 = type=http-request,pattern=^https:\/\/theme7.cn\/api\/v1\/public\/oauth\/profile,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/theme7tk.js
+
+Theme7签到 = type=cron, cronexp="{{{CRON定时设置}}}",wake-system=1,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/theme7.js
+
+[MITM]
+hostname = %APPEND% theme7.cn
