@@ -2,7 +2,7 @@
 #!desc=Theme7签到
 #!category=〈ザㄩメ火华
 #!author=〈ザㄩメ火华
-#!arguments=CRON定时设置:"0 9 * * *", Token获取开关:留空打开，填#关闭
+#!arguments=CRON定时设置:"0 9 * * *", Token获取开关:""
 #!arguments-desc=CRON定时设置: 签到脚本的 CRON 表达式; Token获取开关: 填写 # 即可禁用Token捕获
 
 [Script]
