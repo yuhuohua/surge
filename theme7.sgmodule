@@ -1,5 +1,5 @@
 #!name=Theme7签到
-#!desc=Theme7签到
+#!desc=Theme7每日签到
 #!category=〈ザㄩメ火华
 #!author=〈ザㄩメ火华
 #!arguments=CRON定时设置:"0 9 * * *", Token获取开关:""
