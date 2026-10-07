@@ -1,5 +1,6 @@
 #!name=ikuuu 签到
 #!desc=每日自动签到，支持在编辑参数填入邮箱:密码
+#!icon=https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/ikuuu.png
 #!category=〈ザㄩメ火华
 #!author=〈ザㄩメ火华
 #!arguments-desc=[配置参数]\n\n⓵ CRON定时: 运行时间（默认早上9点）\n\n⓶ 账号: 邮箱:密码，示例: 123456@qq.com:123456\n\n 静默运行: 填 # 则静默不通知，留空则正常弹出通知\n\n 由贰月红大佬提供的接口，感谢贰月红大佬
