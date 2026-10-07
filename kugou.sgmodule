@@ -1,6 +1,6 @@
 #!name=酷狗提现通知
 #!desc=支持多账号，自定义标签。只在日志打印历史提现明细，弹窗仅合并显示概览。参数格式：标签&token#userid
-https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/kugou.png
+#!icon=https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/kugou.png
 #!category=〈ザㄩメ火华
 #!author=〈ザㄩメ火华
 #!arguments-desc=[配置参数]\n\n⓵ CRON定时: 运行时间\n\n⓶ 明细数量: 统一设置所有账号获取的历史明细数量(默认35)\n\n⓷ 今日汇总开关: 弹窗显示所有账号的今日提现总额(留空开，填#关)\n今天提现总额的标签用的是标签的第一个中文字。\n\n⓸ 累计汇总开关: 弹窗显示所有账号的已提现总额(留空开，填#关)\n\n⓹ 账号弹窗开关: 弹窗显示每个账号的详细数据(留空开，填#关)\n\n⓺ 仅新提现开关: 仅弹窗本次运行新增的成功提现，屏蔽已弹窗过的记录(留空开，填#关)\n\n⓻ 账号参数: 格式为 标签&token#userid，如：大号&23IR6x...#123456（在数据前加上//可跳过此组数据，例如：//大号&23IR6x...#123456）\n\n⚠️注意：多账号之间请在模块配置中使用 @ 分隔。
