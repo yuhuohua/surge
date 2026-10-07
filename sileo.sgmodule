@@ -1,5 +1,6 @@
 #!name=越狱插件更新检测
 #!desc=定时查询越狱源(Sileo/Cydia)插件更新状态，支持多源并发查询，可自定义20个插件参数。
+#!icon = https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/sileo.png
 #!author=〈ザㄩメ火华
 #!category=〈ザㄩメ火华
 #!arguments-desc=[配置参数]\n\n⓵ CRON定时设置: 每天运行的时间 (默认早上8点到晚上11点，每1个小时运行一次)\n\n⓶ 插件数据 (最高支持20个): \n格式: 名称@包名(BundleID)@源地址@图标\n(注: 源地址尽量填写包含 Packages 文件的直接根目录，图标选填)\n\n示例1: FLEX 3@com.johncoates.flex3@https://vxbaker.com/repo@🛠️\n示例2: 巨魔商店@com.opa334.trollstore@https://havoc.app\n\n示例3:https://havoc.app(直接填入越狱源就行)\n\n请在上面按需填入插件信息，留空的参数槽会自动忽略。
