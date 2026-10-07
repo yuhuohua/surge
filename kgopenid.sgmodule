@@ -1,5 +1,6 @@
 #!name=酷狗openid获取
 #!desc=酷狗openid获取，抓取后日志查看。
+#!icon=https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/openid.png
 
 [Script]
 获取微信OpenID = type=http-request, pattern=^https:\/\/api\.weixin\.qq\.com\/sns\/userinfo, requires-body=0, max-size=0, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/openid.js
