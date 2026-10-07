@@ -1,5 +1,6 @@
 #!name=电信话费流量监控
 #!desc=监控电信话费与流量信息。支持多号码，每个号码弹窗通知，可以在一个面板中展示所有已配置账号，接口由贰月红大佬提供，感谢贰月红大佬。
+#!icon =https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/zgdx.png
 #!author=〈ザㄩメ火华
 #!category=〈ザㄩメ火华
 #!arguments-desc=[配置参数]\n\n⓵ CRON定时: 运行时间（默认早上9点）\n⓶ 账号格式: 手机号:服务密码:androidId。示例18888888888:123456:a60c************\n⓷ 静默运行: 填 # 则定时任务静默不弹窗。\n androidId复制下面链接获取。\nhttps://telecom.nufe.ccwu.cc
