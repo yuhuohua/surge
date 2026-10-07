@@ -1,5 +1,6 @@
 #!name=生日提醒助手
 #!desc=支持农历/公历，可设置提前 N 天通知。
+#!icon=https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/djs.png
 #!author=〈ザㄩメ火华
 #!category=〈ザㄩメ火华
 #!arguments-desc=[配置参数]\n\n⓵ CRON定时设置: 每天运行的时间 (默认9点)\n\n⓶ 提前天数: 设置提前几天开始提醒 (例如填3，则生日倒计时3天、2天、1天都会通知)\n\n⓷ 生日数据: \n格式: 名字@类型@日期\n类型: 0=公历, 1=农历\n日期: MM-DD\n多人用分号";"隔开\n示例: 老婆@1@10-13或，老婆@1@10-13;妈妈@0@05-20
