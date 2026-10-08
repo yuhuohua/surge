@@ -1,0 +1,14 @@
+#!name=百度输入法去广告
+#!desc=过滤百度输入法广告，替换个人主页随机图。
+#!category=去广告
+#!icon =https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/baidu.png
+
+[Map Local]
+^https?:\/\/mime\.baidu\.com\/(v5\/(start_screen_ads\/list|fb\/st\?logtype|(notiv3|cellloc_noti|noti_cloudswitch_noti)\/info)|sapi\/v1\/(circle\/joinedlist|lccorpus\/(applist|pannellist|usercorpussync)|aihelpactivity\/aihelpresource)|commer\/pocket_api\/enterprise_list) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?appname=baidu_input data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[Script]
+百度输入法去广告 = type=http-response, pattern=^https?:\/\/mime\.baidu\.com\/(imrobot\/v1\/pub\/relation\/get_robot_list|v5\/custom_page\/(layout|getdata)), script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/baiduqg.js, requires-body=true
+
+[MITM]
+hostname = %APPEND% imeres.baidu.com, mbd.baidu.com, mime.baidu.com
