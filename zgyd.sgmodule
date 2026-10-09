@@ -1,0 +1,21 @@
+#!name=中国移动
+#!desc=支持多号码展示，面板手动刷新一次切换号码。先在「中国移动」App 用短信验证码登录一次自动捕获加密参数。
+#!icon=#!icon=https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/zgyd.png
+#!category=面板
+#!arguments-desc=[配置参数]\n\n⓵ 刷新Cron: 定时保活与后台数据拉取执行周期（默认每 20 分钟）。\n\n⓶ 面板标题: Surge 首页卡片显示的标题（默认：中国移动）。\n\n⓷ 面板刷新间隔: 面板在 Surge 前台刷新的频率，单位秒（默认 1800 秒）。\n\n⓸ 账号参数: 格式为 标签#手机号（如：主号#13800138000 或直接填 13800138000）。在数据前加上 // 可跳过此账号。
+#!arguments=刷新Cron:"*/20 * * * *",面板标题:"中国移动",面板刷新间隔:"1800",账号1:"",账号2:"",账号3:"",账号4:"",账号5:""
+
+[Script]
+中国移动登录捕获 = type=http-request, pattern=^https?:\/\/(client\.app\.coc\.10086\.cn|10086\.online-cmcc\.cn)(:\d+)?\/, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/zgyd.js, requires-body=true, timeout=15
+
+中国移动Cookie捕获 = type=http-response, pattern=^https?:\/\/(client\.app\.coc\.10086\.cn|10086\.online-cmcc\.cn)(:\d+)?\/, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/zgyd.js, requires-body=false, timeout=15
+
+中国移动保活 = type=cron, cronexp="{{{刷新Cron}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/zgyd.js, wake-system=1, timeout=60, argument=action=task&title={{{面板标题}}}&accounts={{{账号1}}}@{{{账号2}}}@{{{账号3}}}@{{{账号4}}}@{{{账号5}}}
+
+中国移动面板 = type=generic, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/zgyd.js, timeout=15, argument=action=panel&title={{{面板标题}}}&accounts={{{账号1}}}@{{{账号2}}}@{{{账号3}}}@{{{账号4}}}@{{{账号5}}}
+
+[Panel]
+中国移动面板 = script-name=中国移动面板, title="中国移动", content="正在拉取数据...", style=info, update-interval={{{面板刷新间隔}}}
+
+[MITM]
+hostname = %APPEND% client.app.coc.10086.cn, 10086.online-cmcc.cn, *.10086.cn
