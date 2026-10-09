@@ -1,6 +1,6 @@
 #!name=今日天气
 #!desc=显示当地天气信息，支持自定义地区、颜色和静默模式。
-https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/tq.png
+#!icon=https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/tq.png
 #!author=〈ザㄩメ火华
 #!category=〈ザㄩメ火华
 #!arguments=城市代码:101280503, 图标颜色:#ffc400, 图标名称:sun.max.fill, Cron定时设置:"10 8-22/3 * * *", 静默运行:""
