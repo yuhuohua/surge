@@ -1,5 +1,6 @@
 #!name=今日油价
 #!desc=查询每日油价信息，支持面板显示和静默通知。
+https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/yj.png
 #!author=〈ザㄩメ火华
 #!category=〈ザㄩメ火华
 #!arguments=省份:广东, 静默运行:"", 图标名称:fuelpump.fill, 图标颜色:#FF2D55, Cron定时设置:"30 8 * * *"
