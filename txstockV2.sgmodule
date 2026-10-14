@@ -1,0 +1,12 @@
+#!name=腾讯自选股
+#!desc=腾讯自选股自动任务提现
+
+[Script]
+# 抓 CK：APP + 公众号小程序
+腾讯自选股抓CK = type=http-request, pattern=^https:\/\/wzq\.tenpay\.com\/cgi-bin\/.*user.*\.fcgi, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/txstockV2.js
+
+# 定时任务
+腾讯自选股定时 = type=cron, cronexp="35 11,16 * * *", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/txstockV2.js
+
+[MITM]
+hostname = %APPEND% wzq.tenpay.com
