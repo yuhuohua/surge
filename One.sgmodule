@@ -1,0 +1,13 @@
+#!name=One 去广告
+#!desc=拦截开屏、广告弹窗
+#!author=〈ザㄩメ火华
+#!category=去广告
+
+[Rule]
+DOMAIN-KEYWORD,917api.,REJECT
+DOMAIN,sc.ffsevhuy.com,REJECT
+URL-REGEX,^https?:\/\/api\.[a-z0-9-]+\.com\/v2\.5\/ad\/space,REJECT
+URL-REGEX,^https?:\/\/api\.[a-z0-9-]+\.com\/v2\.5\/my\/unread,REJECT
+
+[MITM]
+hostname = %APPEND% api.*.com
