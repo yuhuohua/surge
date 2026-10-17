@@ -1,7 +1,7 @@
 #!name=网络雷达
 #!desc=网络信息面板
 #!author=〈ザㄩメ火华
-#!category=〈ザㄩメ火华
+#!category=小组件
 
 [Script]
 网络雷达 = type=http-request, pattern=^http://netradar\.surge\.api, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/wlld.js
