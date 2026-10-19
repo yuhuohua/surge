@@ -1,14 +1,11 @@
 #!name=腾讯自选股
 #!desc=腾讯自选股自动任务提现
-#!arguments=CRON定时设置:"35 11,16 * * *"
-#!arguments-desc=CRON定时设置: 签到脚本的 CRON 表达式(默认11点35分和16点35分运行)
+#!arguments=CRON定时设置:"35 11,16 * * *", 通知开关:"1", 提现金额:"5", 互助开关:"1", 新手任务:"0",抓取开关:""
+#!arguments-desc=CRON定时设置: 签到脚本的 CRON 表达式, 通知开关: 0为关闭/1为打开, 提现金额: 0不提现/1提现1元/5提现5元, 互助开关: 0不做/1互相助力, 新手任务: 0不做/1自动做\n\n抓取开关: 填写 # 即可禁用CK捕获。
 
 [Script]
-# 抓 CK：APP + 公众号小程序
-腾讯自选股抓CK = type=http-request, pattern=^https:\/\/wzq\.tenpay\.com\/cgi-bin\/.*user.*\.fcgi, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/txstockV2.js
-
-# 定时任务
-腾讯自选股定时 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/txstockV2.js, timeout=600
+{{{抓取开关}}}腾讯自选股抓CK = type=http-request, pattern=^https:\/\/wzq\.tenpay\.com\/cgi-bin\/.*user.*\.fcgi, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/txstockV2.js
+腾讯自选股定时 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/txstockV2.js, argument=notifyFlag={{{通知开关}}}&withdrawCash={{{提现金额}}}&helpFlag={{{互助开关}}}&newbieFlag={{{新手任务}}}, timeout=608
 
 [MITM]
 hostname = %APPEND% wzq.tenpay.com
