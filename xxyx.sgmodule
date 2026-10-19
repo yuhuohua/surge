@@ -1,0 +1,8 @@
+#!name=晓晓优选
+#!desc=晓晓优选 每天200+能量 能量兑换券，外卖返利
+
+[Script]
+晓晓优选抓取 = type=http-response, pattern=^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/xxyx.js, requires-body=true, max-size=-1, timeout=60
+晓晓优选任务 = type=cron,cronexp=42 21 * * *,timeout=60,debug=1,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/xxyx.js,script-update-interval=0
+[MITM]
+hostname = %APPEND% xxyx-client-api.xiaoxiaoyouxuan.com
