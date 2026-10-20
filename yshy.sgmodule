@@ -1,0 +1,14 @@
+#!name=仰韶会员俱乐部签到
+#!desc=自动获取仰韶会员小程序 Token，并在每天自动签到和查询积分。支持多账号，保留多平台兼容。
+#!category=每日签到
+#!author=〈ザㄩメ火华
+#!arguments=CRON定时设置:"20 12 * * *", 抓取开关:"", 
+#!arguments-desc=CRON定时设置: 签到脚本的 CRON 表达式; 抓取开关: 填写 # 即可禁用Token捕获
+
+[Script]
+{{{抓取开关}}}仰韶_获取Token = type=http-request, pattern=^https:\/\/hy\.51pt\.top\/, requires-body=0, max-size=0, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/yshy.js
+
+仰韶_自动签到 = type=cron, cronexp="{{{CRON定时设置}}}", wake-system=1, timeout=60, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/yshy.js
+
+[MITM]
+hostname = %APPEND% hy.51pt.top
