@@ -1,0 +1,14 @@
+#!name=三只松鼠
+#!desc=三只松鼠超级商店每日签到
+#!category=每日签到
+#!author=〈ザㄩメ火华
+#!arguments=CRON定时设置:"0 12 * * *", 抓取开关:""
+#!arguments-desc=CRON定时设置: 签到脚本的 CRON 表达式; 抓取开关: 填写 # 即可禁用Token捕获
+
+[Script]
+{{{抓取开关}}}三只松鼠_获取Token = type=http-request,pattern=^https:\/\/h5\.youzan\.com\/(wscuser|wscdeco|wscump)\/,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/szss_token.js,requires-body=false
+
+三只松鼠_自动签到 = type=cron,cronexp="{{{CRON定时设置}}}",script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/szss.js,timeout=30,wake-system=1
+
+[MITM]
+hostname = %APPEND% h5.youzan.com
