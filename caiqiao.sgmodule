@@ -1,0 +1,14 @@
+#!name=🎰 彩票开奖通知
+#!desc=定时拉取彩票开奖，支持在参数槽位中按需填写多个彩种（支持：双色球、大乐透、排列三、福彩3D、七星彩、七乐彩、排列五）。留空的槽位会自动忽略。
+#!category=每日提醒
+#!author=〈ザㄩメ火华
+#!arguments-desc=[配置参数]\n\n⓵ CRON定时设置: 每天高频检查开奖的时间 (默认 21:33、21:43、21:53)\n\n⓶ 彩票槽位 :\n请填入彩种名称（如：双色球、大乐透、排列三、福彩3D、七星彩、七乐彩、排列五等）。不看的槽位直接留空即可。
+#!arguments=CRON定时设置:"33,43,53 21,22 * * *",彩票1:"双色球",彩票2:"",彩票3:"",彩票4:"",彩票5:"",彩票6:"",彩票7:"",彩票8:""
+
+[Script]
+彩票数据更新 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/lottery.js, wake-system=1, timeout=15, argument=apps={{{彩票1}}};{{{彩票2}}};{{{彩票3}}};{{{彩票4}}};{{{彩票5}}};{{{彩票6}}};{{{彩票7}}};{{{彩票8}}}
+
+全国彩票面板 = type=generic, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/lottery.js, timeout=5, argument=apps={{{彩票1}}};{{{彩票2}}};{{{彩票3}}};{{{彩票4}}};{{{彩票5}}};{{{彩票6}}};{{{彩票7}}};{{{彩票8}}}
+
+[Panel]
+全国彩票开奖 = script-name=全国彩票面板, title="🎰 彩票开奖", desc="正在读取数据...", icon=ticket, update-interval=3600
