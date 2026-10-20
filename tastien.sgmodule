@@ -1,0 +1,14 @@
+#!name=塔斯汀每日签到
+#!desc=签到七天领一个小汉堡
+#!category=〈ザㄩメ火华
+#!author=每日签到
+#!arguments=CRON定时设置:"0 9 * * *", 抓取开关:""
+#!arguments-desc=CRON定时设置: 签到脚本的 CRON 表达式; 抓取开关: 填写 # 即可禁用Token捕获
+
+[Script]
+{{{抓取开关}}}塔斯汀获取Token = type=http-request,pattern=^https:\/\/sss-web\.tastientech\.com\/api\/,script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/tastien_token.js,requires-body=false
+
+塔斯汀签到 = type=cron,cronexp="{{{CRON定时设置}}}",script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/tastien.js,timeout=30,wake-system=1
+
+[MITM]
+hostname = %APPEND% sss-web.tastientech.com
