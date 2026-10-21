@@ -1,0 +1,13 @@
+#!name=鸿星尔克官方会员签到
+#!desc=微信鸿星尔克官方会员中心小程序每日签到
+#!category=本地调试
+#!arguments=CRON定时设置:"30 12 * * *", 抓取开关:""
+#!arguments-desc=CRON定时设置: 签到脚本的 CRON 表达式(默认12点30分运行); 抓取开关: 填写 # 即可禁用Token捕获
+
+[Script]
+{{{抓取开关}}}鸿星尔克获取Token = type=http-request, pattern=^https:\/\/hope\.demogic\.com\/gic-wx-app\/(.*), requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/hxek.js
+
+鸿星尔克定时签到 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/hxek.js
+
+[MITM]
+hostname = %APPEND% hope.demogic.com
