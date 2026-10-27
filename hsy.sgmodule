@@ -1,0 +1,14 @@
+#!name=回收猿签到
+#!desc=回收猿自动签到、抽奖、0元夺宝。进入小程序抓取账号，成功后可在编辑参数中填入#关闭抓包。
+#!category=薅羊毛
+#!author=〈ザㄩメ火华
+#!arguments=CRON定时设置:"35 8 * * *", 抓取开关:""
+#!arguments-desc=CRON定时设置: 定时执行的时间; 抓取开关: 填 # 禁用捕获
+
+[Script]
+{{{抓取开关}}}回收猿_获取账号 = type=http-request, pattern=^https?:\/\/www\.52bjy\.com\/api\/app\/.*(appkey=1079fb245839e765|hsy\.php).*username=, requires-header=1, max-size=0, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/hsy.js
+
+回收猿_定时任务 = type=cron, cronexp="{{{CRON定时设置}}}", wake-system=1, timeout=300, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/hsy.js
+
+[MITM]
+hostname = %APPEND% www.52bjy.com
