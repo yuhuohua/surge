@@ -1,0 +1,15 @@
+#!name=铛铛一下旧衣服回收
+#!desc=铛铛一下自动签到、抽奖、提现。请先进入小程序抓取Token，成功后可关闭获取开关。
+#!category=薅羊毛
+#!author=〈ザㄩメ火华
+#!icon=https://raw.githubusercontent.com/yuhuohua/tupiao/refs/heads/main/ddyx.png
+#!arguments=CRON定时设置:"0 9 * * *", 抓取开关:""
+#!arguments-desc=CRON定时设置: 定时执行的时间; 抓取开关: 填 # 禁用Token捕获
+
+[Script]
+{{{抓取开关}}}铛铛一下_获取Token = type=http-request, pattern=^https:\/\/vues\.dd1x\.cn\/api\/my\/get_order_first, requires-header=1, max-size=0, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/ddyx.js
+
+铛铛一下_定时任务 = type=cron, cronexp="{{{CRON定时设置}}}", wake-system=1, timeout=600, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/ddyx.js
+
+[MITM]
+hostname = %APPEND% vues.dd1x.cn
