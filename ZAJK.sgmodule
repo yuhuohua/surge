@@ -1,0 +1,14 @@
+#!name=众安健康签到与提现
+#!desc=众安健康小程序自动签到、浏览任务、领取奖励及自动提现。请先进入小程序抓取 Token，成功后可关闭获取开关。
+#!category=薅羊毛
+#!author=〈ザㄩメ火华
+#!arguments=CRON定时设置:"30 9 * * *", 抓取开关:"", 提现开关:"1"
+#!arguments-desc=CRON定时设置: 定时执行的时间; 抓取开关: 填 # 禁用Token捕获; 提现开关: 1为开启提现，0为关闭提现
+
+[Script]
+{{{抓取开关}}}众安健康_获取Token = type=http-request, pattern=^https:\/\/ihealth\.zhongan\.com\/api\/lemon\/v1\/, requires-body=1, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/ZAJK.js
+
+众安健康_定时任务 = type=cron, cronexp="{{{CRON定时设置}}}", wake-system=1, timeout=60, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/ZAJK.js, argument=withdraw={{{提现开关}}}
+
+[MITM]
+hostname = %APPEND% ihealth.zhongan.com
