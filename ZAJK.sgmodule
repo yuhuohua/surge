@@ -3,7 +3,7 @@
 #!category=薅羊毛
 #!author=〈ザㄩメ火华
 #!arguments=CRON定时设置:"30 9 * * *", 抓取开关:"", 提现开关:"1"
-#!arguments-desc=CRON定时设置: 定时执行的时间; 抓取开关: 填 # 禁用Token捕获; 提现开关: 1为开启提现，0为关闭提现
+#!arguments-desc=CRON定时设置: 定时执行的时间\n\n抓取开关: 填 # 禁用Token捕获\n\n提现开关: 1为开启提现，0为关闭提现
 
 [Script]
 {{{抓取开关}}}众安健康_获取Token = type=http-request, pattern=^https:\/\/ihealth\.zhongan\.com\/api\/lemon\/v1\/, requires-body=1, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/ZAJK.js
