@@ -1,0 +1,11 @@
+#!name=两步路
+#!desc=两步路解锁会员
+#!category=破解
+
+[Script]
+2bulu = type=http-response, pattern=^https:\/\/h5\.2bulu\.com\/api\/v9\/vip\/myVipInfo\?(?:[^#?&]+&)*userId=[^&]+, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/2bulu.js, requires-body=true, max-size=-1, timeout=60
+
+2bulu = type=http-response, pattern=^https:\/\/helper\.2bulu\.com\/vip\/message(?:\?.*)?$, script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/2bulu.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% h5.2bulu.com, helper.2bulu.com
