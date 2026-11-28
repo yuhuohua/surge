@@ -12,4 +12,4 @@
 声荐自动任务 = type=cron, cronexp="{{{CRON定时设置}}}", script-path=https://raw.githubusercontent.com/yuhuohua/jb/refs/heads/main/sj.js, script-update-interval=0, timeout=60, argument=notify={{{静默运行}}}
 
 [MITM]
-hostname = %APPEND% xcx.myinyun.com:4438
+hostname = %APPEND% xcx.myinyun.com:4438, xcx.myinyun.com
